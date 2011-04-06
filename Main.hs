@@ -21,7 +21,7 @@ getHomeR = do
   liftIO $ updateSite
   defaultLayout [hamlet|ok.|]
 
-main = warpDebug 3001 GithubHook
+main = warp 3001 GithubHook
 
 --
 
