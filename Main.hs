@@ -11,15 +11,13 @@ wwwdir = "/var/www/nginx-default"
 data GithubHook = GithubHook
 
 mkYesod "GithubHook" [parseRoutes|
-/ HomeR GET POST
+/ HomeR POST
 |]
 
 instance Yesod GithubHook where
     approot _ = ""
 
-postHomeR = getHomeR
-
-getHomeR = do
+postHomeR = do
   liftIO $ updateSite
   defaultLayout [hamlet|ok.|]
 
