@@ -11,11 +11,13 @@ wwwdir = "/var/www/nginx-default"
 data GithubHook = GithubHook
 
 mkYesod "GithubHook" [parseRoutes|
-/ HomeR GET
+/ HomeR GET POST
 |]
 
 instance Yesod GithubHook where
     approot _ = ""
+
+postHomeR = getHomeR
 
 getHomeR = do
   liftIO $ updateSite
