@@ -35,5 +35,5 @@ system' cmd = do
 updateSite = do
   system' $ "rm -rf site"
   system' $ "git clone " ++ repourl ++ " site"
-  system' $ "cp -rf site " ++ wwwdir
+  system' $ "cp -rf site/* " ++ wwwdir
   system' $ "rm -rf site"
