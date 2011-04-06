@@ -5,7 +5,7 @@ import Control.Monad
 import System.Cmd
 import System.Exit
 
-repourl = "git@github.com:tanakh/tanakh.jp.git"
+repourl = "git://github.com/tanakh/tanakh.jp.git"
 wwwdir = "/var/www/nginx-default"
 
 data GithubHook = GithubHook
